@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 const SongPage = () => {
 return(
     <React.Fragment>
-        
+        <div class="">
           <h1> Song Page </h1>
+        </div>
          
       </React.Fragment>
 )}
