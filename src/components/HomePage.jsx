@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Countdown from 'react-countdown';
-import ReactDOM from 'react-dom';
+//import Countdown from 'react-countdown';
+//import ReactDOM from 'react-dom';
 
 
 function HomePage() {
   const [posts, setPosts] = useState([]);
   const [greets, setGreetings] = useState("");
-  const [TimeinMS ,setTimeInMs] = useState("");
   const [Live, setLive] = useState("");
 
   useEffect(() => {
@@ -33,18 +32,6 @@ function HomePage() {
   });
   }, []);
 
-  useEffect(() => {
-    axios.get("https://christmasjoy.dev/api/countdown")
-      .then(response => {
-        setTimeInMs(response.data)
-        console.log(response.data)
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  },[]);
-
-   
   useEffect(() => {
     axios.get("https://christmascountdown.live/api/timeleft/total/?timezone=EST")
       .then(response => {
@@ -90,10 +77,6 @@ function HomePage() {
           <p class="christmasFont"> Welcome to our website! We hope you have a merry Christmas and a happy holiday season!   </p>
           <br></br>
 
-          {/* 
-          <p> {TimeinMS.days} </p>
-          */}
-          
           <p>Christmas is an annual holiday celebrated by millions worldwide. Christmas is a time of </p>
           <p>togetherness and giving and is often associated with festive decorations and the exchange of </p>
           <p>gifts. Over time, Christmas has evolved from lighting homes with colorful decorations to singing </p>
