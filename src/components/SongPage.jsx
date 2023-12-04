@@ -5,12 +5,12 @@ import axios from "axios"; //add
 
 
 const SongPage = () => {
-  const [TimeinMS ,setTimeInMs] = useState("");
+  const [TimeinDays ,setTimeInDays] = useState("");
 
   useEffect(() => { //add
     axios.get("https://christmasjoy.dev/api/countdown")
       .then(response => {
-        setTimeInMs(response.data)
+        setTimeInDays(response.data)
         console.log(response.data)
       })
       .catch(error => {
@@ -22,7 +22,7 @@ return(
     <React.Fragment>
         <div class="container">
           <h1> Song Page </h1>
-          <p> {TimeinMS.days} Days Left Until Christmas</p>
+          <p> {TimeinDays.days} Days Left Until Christmas</p>
           <br></br>
           <br></br>
           <div class="row">
