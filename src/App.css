@@ -59,10 +59,6 @@
   height: 2.5rem;
 }
 
-.christmasFont{
-  font-family: 'Mountains of Christmas';
-  font-size: 22px;
-}
 
 @keyframes App-logo-spin {
   from {
@@ -72,6 +68,42 @@
     transform: rotate(360deg);
   }
 }
+
+
+h1, h2{
+  font-family: "MerryChristmasFlake";
+}
+
+p{
+  font-family: "ChristmasDream";
+  font-size: 20px;
+
+}
+
+
+@font-face {
+  font-family: 'MerryChristmasFlake';
+    src: url('font1/MerryChristmasFlake.eot'); /* IE9 Compat Modes */ 
+    src: url('font1/MerryChristmasFlake.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('font1/MerryChristmasFlake.woff2') format('woff2'), /* Super Modern Browsers */
+        url('font1/MerryChristmasFlake.woff') format('woff'), /* Pretty Modern Browsers */
+        url('font1/MerryChristmasFlake.ttf')  format('truetype'), /* Safari, Android, iOS */
+        url('font1/MerryChristmasFlake.svg#svgFontName') format('svg'); /* Legacy iOS */
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'ChristmasDream';
+    src: url('font2/ChristmasDreamRegular.eot'); /* IE9 Compat Modes */ 
+    src: url('font2/ChristmasDreamRegular.eot') format('embedded-opentype'), /* IE6-IE8 */
+        url('font2/ChristmasDreamRegular.woff2') format('woff2'), /* Super Modern Browsers */
+        url('font2/ChristmasDreamRegular.woff') format('woff'), /* Pretty Modern Browsers */
+        url('font2/ChristmasDream.ttf')  format('truetype'); /* Safari, Android, iOS */
+    font-weight: 400;
+    font-style: normal;
+}
+
 
 
 

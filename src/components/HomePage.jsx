@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Countdown from 'react-countdown';
-import ReactDOM from 'react-dom';
+//import Countdown from 'react-countdown';
+//import ReactDOM from 'react-dom';
 
 
 function HomePage() {
@@ -17,7 +17,7 @@ function HomePage() {
       .catch(error => {
         console.error(error); 
       });
-  })
+  }, [])
   
   useEffect(() => {
     axios.get('https://christmasjoy.dev/api/greetings?random')
@@ -28,8 +28,6 @@ function HomePage() {
   .catch(error => {
     console.error(error);
   });
-
-
   }, []);
   
 
@@ -52,7 +50,7 @@ function HomePage() {
           <p>togetherness and giving and is often associated with festive decorations and the exchange of </p>
           <p>gifts. Over time, Christmas has evolved from lighting homes with colorful decorations to singing </p>
           <p>carols. It's a season of love and sharing, making it one of the most cherished holidays globally. </p>
-          <h3> {greets} </h3>
+          <h2> {greets} </h2>
           <iframe src="https://christmascountdown.live/fullscreen" height="500" width="500" title="song1"></iframe>
         </div> 
       </React.Fragment>
