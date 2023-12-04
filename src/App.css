@@ -59,6 +59,11 @@
   height: 2.5rem;
 }
 
+.christmasFont{
+  font-family: 'Mountains of Christmas';
+  font-size: 22px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -67,4 +72,6 @@
     transform: rotate(360deg);
   }
 }
+
+
 
