@@ -1,7 +1,7 @@
 //import React from "react";
-import greenbean from "/workspace/group_4/src/images/greenbean.jpg"
-import bakedham from "/workspace/group_4/src/images/bakedham.jpg";
-import fruitcake from "/workspace/group_4/src/images/fruitcake.jpg";
+import greenbean from "../../src/images/greenbean.jpg"
+import bakedham from "../../src/images/bakedham.jpg";
+import fruitcake from "../../src/images/fruitcake.jpg";
 
 import React, { useState, useEffect } from "react"; //add
 import axios from "axios"; //add
