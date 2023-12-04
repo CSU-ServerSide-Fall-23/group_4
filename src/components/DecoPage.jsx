@@ -1,10 +1,10 @@
 //import React from "react";
-import inflate from "/workspace/group_4/src/decoimg/inflate.jpg";
-import lights from "/workspace/group_4/src/decoimg/lights.jpg";
-import ornaments from "/workspace/group_4/src/decoimg/ornament.jpg";
-import stockings from "/workspace/group_4/src/decoimg/stockings.jpg";
-import tree from "/workspace/group_4/src/decoimg/tree.jpg";
-import wreath from "/workspace/group_4/src/decoimg/wreath.jpg";
+import inflate from "../../src/decoimg/inflate.jpg";
+import lights from "../../src/decoimg/lights.jpg";
+import ornaments from "../../src/decoimg/ornament.jpg";
+import stockings from "../../src/decoimg/stockings.jpg";
+import tree from "../../src/decoimg/tree.jpg";
+import wreath from "../../src/decoimg/wreath.jpg";
 
 import React, { useState, useEffect } from "react"; //add
 import axios from "axios"; //add
