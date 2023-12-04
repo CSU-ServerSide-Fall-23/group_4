@@ -1,10 +1,28 @@
-import React from "react";
+//import React from "react";
+import React, { useState, useEffect } from "react"; //add
+import axios from "axios"; //add
+
+
 
 const SongPage = () => {
+  const [TimeinMS ,setTimeInMs] = useState("");
+
+  useEffect(() => { //add
+    axios.get("https://christmasjoy.dev/api/countdown")
+      .then(response => {
+        setTimeInMs(response.data)
+        console.log(response.data)
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  },[]);//add
+
 return(
     <React.Fragment>
         <div class="container">
           <h1> Song Page </h1>
+          <p> {TimeinMS.days} Days Left Until Christmas</p>
           <br></br>
           <br></br>
           <div class="row">
@@ -27,10 +45,7 @@ return(
               <iframe src="https://www.youtube.com/embed/4PzetPqepXA" height="200" width="300" title="song1"></iframe>
             </div>
           </div>
-
-
-
-
+          
 
         </div>
          

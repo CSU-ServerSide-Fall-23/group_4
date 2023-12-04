@@ -1,4 +1,4 @@
-import React from "react";
+//import React from "react";
 import inflate from "/workspace/group_4/src/decoimg/inflate.jpg";
 import lights from "/workspace/group_4/src/decoimg/lights.jpg";
 import ornaments from "/workspace/group_4/src/decoimg/ornament.jpg";
@@ -6,12 +6,28 @@ import stockings from "/workspace/group_4/src/decoimg/stockings.jpg";
 import tree from "/workspace/group_4/src/decoimg/tree.jpg";
 import wreath from "/workspace/group_4/src/decoimg/wreath.jpg";
 
+import React, { useState, useEffect } from "react"; //add
+import axios from "axios"; //add
+
 const DecoPage = () => {
+  const [TimeinMS ,setTimeInMs] = useState("");
+
+  useEffect(() => { //add
+    axios.get("https://christmasjoy.dev/api/countdown")
+      .then(response => {
+        setTimeInMs(response.data)
+        console.log(response.data)
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  },[]);//add
 return(
     <React.Fragment>
         <div class="container">
         
           <h1> Deco Page </h1>
+          <p> {TimeinMS.days} Days Left Until Christmas</p>
           <div class="row">
             <div class="col">
                 <a href="https://www.amazon.com/OurWarm-Christmas-Inflatables-Decorations-Inflatable/dp/B08GKF1KJH/ref=sr_1_4?crid=VW6T41EDTZXI&keywords=christmas+inflatable+outdoor+decoration&qid=1699150519&sprefix=christmas+infla%2Caps%2C282&sr=8-4"><img src={inflate} height="200" width ="200"></img></a>

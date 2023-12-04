@@ -8,7 +8,7 @@ function HomePage() {
   const [posts, setPosts] = useState([]);
   const [greets, setGreetings] = useState("");
   const [TimeinMS ,setTimeInMs] = useState("");
-  const [Live, setLive] = useState("");
+  //const [Live, setLive] = useState("");
 
   useEffect(() => {
     axios.get('https://random-data-api.com/api/color/random_color') 
@@ -44,6 +44,21 @@ function HomePage() {
       });
   },[]);
 
+  /** 
+  useEffect(() => {
+    axios.get("https://christmascountdown.live/api/timeleft/")
+      .then(response => {
+        setTimeInMs(response.data)
+        console.log(response.data)
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  },[]);
+
+  */
+
+
 
 
   const styles = {
@@ -61,7 +76,9 @@ function HomePage() {
           <p class="christmasFont"> Welcome to our website! We hope you have a merry Christmas and a happy holiday season!   </p>
           <br></br>
 
+          {/* 
           <p> {TimeinMS.days} </p>
+          */}
           
           <p>Christmas is an annual holiday celebrated by millions worldwide. Christmas is a time of </p>
           <p>togetherness and giving and is often associated with festive decorations and the exchange of </p>

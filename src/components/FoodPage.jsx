@@ -1,13 +1,31 @@
-import React from "react";
+//import React from "react";
 import greenbean from "/workspace/group_4/src/images/greenbean.jpg"
 import bakedham from "/workspace/group_4/src/images/bakedham.jpg";
 import fruitcake from "/workspace/group_4/src/images/fruitcake.jpg";
 
+import React, { useState, useEffect } from "react"; //add
+import axios from "axios"; //add
+
 const FoodPage = () => {
+    const [TimeinMS ,setTimeInMs] = useState("");
+
+  useEffect(() => { //add
+    axios.get("https://christmasjoy.dev/api/countdown")
+      .then(response => {
+        setTimeInMs(response.data)
+        console.log(response.data)
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  },[]);//add
+
 return(
     <React.Fragment>
         <div class="container">
             <h1> Food Page</h1>
+            <p> {TimeinMS.days} Days Left Until Christmas</p>
+
             <div class="row">
                 <div class="col-6">
                     <a href="https://www.campbells.com/recipes/green-bean-casserole/"><img src={greenbean} height="200" width="200"></img></a>
