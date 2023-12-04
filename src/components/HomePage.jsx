@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-//import Countdown from 'react-countdown';
-//import ReactDOM from 'react-dom';
+import Countdown from 'react-countdown';
+import ReactDOM from 'react-dom';
 
 
 function HomePage() {
   const [posts, setPosts] = useState([]);
   const [greets, setGreetings] = useState("");
   const [TimeinMS ,setTimeInMs] = useState("");
-  //const [Live, setLive] = useState("");
+  const [Live, setLive] = useState("");
 
   useEffect(() => {
     axios.get('https://random-data-api.com/api/color/random_color') 
@@ -44,11 +44,11 @@ function HomePage() {
       });
   },[]);
 
-  /** 
+   
   useEffect(() => {
-    axios.get("https://christmascountdown.live/api/timeleft/")
+    axios.get("https://christmascountdown.live/api/timeleft/total/?timezone=EST")
       .then(response => {
-        setTimeInMs(response.data)
+        setLive(response.data)
         console.log(response.data)
       })
       .catch(error => {
@@ -56,20 +56,34 @@ function HomePage() {
       });
   },[]);
 
-  */
-
-
-
-
   const styles = {
     coloring: {
       color: posts.hex_value
     }
   }
+/** 
+  const Completionist = () => <span>Santa has come!</span>;
+
+  // Renderer callback with condition
+  const renderer = ({ days, hours, minutes, seconds, completed }) => {
+  if (completed) {
+    // Render a completed state
+    return <Completionist />;
+  } else {
+    // Render a countdown
+    return <span>{days} Days :{hours} Hours :{minutes} Minutes :{seconds} Seconds</span>;
+  }
+};
+*/
 
     return(
       <React.Fragment>
+        
         <div class="container">
+
+          {//<Countdown date={Date.now() } renderer={renderer}/>
+          }
+
           <br></br>
           <h1 style = {{color: styles.coloring.color}}> WELCOME TO THE CHRISTMAS WEBSITE!!! </h1>
           <br></br>
@@ -86,6 +100,7 @@ function HomePage() {
           <p>carols. It's a season of love and sharing, making it one of the most cherished holidays globally. </p>
           <h2> {greets} </h2>
           <iframe src="https://christmascountdown.live/fullscreen" height="500" width="500" title="song1"></iframe>
+          <p>{Live.days}: {Live.hours}: {Live.minutes} : {Live.seconds} </p>
           <br></br><br></br><br></br><br></br><br></br><br></br>
         </div> 
       </React.Fragment>
