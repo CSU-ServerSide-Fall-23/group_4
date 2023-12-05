@@ -8,11 +8,11 @@ The purpose of this website is to provide new or existing people who plan to cel
 
 ### Build Command
 
-* npm i
+* 'npm i'
 
 ### Start Command 
 
-* yarn start
+* 'yarn start'
 
 ## Authors
 
