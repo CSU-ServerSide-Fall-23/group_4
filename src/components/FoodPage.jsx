@@ -1,15 +1,25 @@
-//import React from "react";
+/**
+ * Christmas Website Project
+ * @author Gurpreet Singh & Michaela 
+ * @version 12-04-2023
+ * Description: This is the FoodPage which contains 3 types of foods, with short descriptions, clicking on the images will lead to their recipes
+ * Purpose: This page helps new or existing people to find what foods to eat or prepare during christmas
+ * Api used: countdown api
+ */
 import greenbean from "../../src/images/greenbean.jpg"
 import bakedham from "../../src/images/bakedham.jpg";
 import fruitcake from "../../src/images/fruitcake.jpg";
 
-import React, { useState, useEffect } from "react"; //add
-import axios from "axios"; //add
+import React, { useState, useEffect } from "react"; 
+import axios from "axios"; 
+
 
 const FoodPage = () => {
     const [TimeinDays ,setTimeInDays] = useState("");
 
-  useEffect(() => { //add
+
+  //the useEffect() below is for the countdown api
+  useEffect(() => { 
     axios.get("https://christmasjoy.dev/api/countdown")
       .then(response => {
         setTimeInDays(response.data)
@@ -18,7 +28,7 @@ const FoodPage = () => {
       .catch(error => {
         console.error(error);
       });
-  },[]);//add
+  },[]);
 
 return(
     <React.Fragment>

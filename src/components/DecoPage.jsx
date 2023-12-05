@@ -1,4 +1,12 @@
-//import React from "react";
+/**
+ * Christmas Website Project
+ * @author Gurpreet Singh & Michaela 
+ * @version 12-04-2023
+ * Description: This is the DecoPage which contains 6 types of decorations, with amazon links to purchase when clicking on images
+ * Purpose: This page helps new or existing people to find what decorations to put during christmas
+ * Api used: countdown api
+ */
+
 import inflate from "../../src/decoimg/inflate.jpg";
 import lights from "../../src/decoimg/lights.jpg";
 import ornaments from "../../src/decoimg/ornament.jpg";
@@ -6,13 +14,14 @@ import stockings from "../../src/decoimg/stockings.jpg";
 import tree from "../../src/decoimg/tree.jpg";
 import wreath from "../../src/decoimg/wreath.jpg";
 
-import React, { useState, useEffect } from "react"; //add
-import axios from "axios"; //add
+import React, { useState, useEffect } from "react"; 
+import axios from "axios"; 
 
 const DecoPage = () => {
   const [TimeinDays ,setTimeInDays] = useState("");
 
-  useEffect(() => { //add
+  //the useEffect() below is for the countdown api
+  useEffect(() => { 
     axios.get("https://christmasjoy.dev/api/countdown")
       .then(response => {
         setTimeInDays(response.data)
@@ -21,7 +30,7 @@ const DecoPage = () => {
       .catch(error => {
         console.error(error);
       });
-  },[]);//add
+  },[]);
 return(
     <React.Fragment>
         <div class="container">

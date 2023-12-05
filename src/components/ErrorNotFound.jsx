@@ -1,3 +1,8 @@
+/**
+ * Christmas Website Project
+ * @author Gurpreet Singh & Michaela 
+ * @version 12-04-2023
+ */
 import { useRouteError } from "react-router-dom";
 
 function ErrorNotFound() {

@@ -1,13 +1,20 @@
-//import React from "react";
-import React, { useState, useEffect } from "react"; //add
-import axios from "axios"; //add
-
-
+/**
+ * Christmas Website Project
+ * @author Gurpreet Singh & Michaela 
+ * @version 12-04-2023
+ * Description: This is the SongPage which contains 4 different songs which the user can interact with
+ * Purpose: This page helps new or existing people to find what songs to listen to during christmas
+ * Api: countdown api
+ */
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const SongPage = () => {
   const [TimeinDays ,setTimeInDays] = useState("");
 
-  useEffect(() => { //add
+
+  //the useEffect() below is the countdown api 
+  useEffect(() => { 
     axios.get("https://christmasjoy.dev/api/countdown")
       .then(response => {
         setTimeInDays(response.data)
@@ -16,7 +23,7 @@ const SongPage = () => {
       .catch(error => {
         console.error(error);
       });
-  },[]);//add
+  },[]);
 
 return(
     <React.Fragment>
@@ -45,8 +52,6 @@ return(
               <iframe src="https://www.youtube.com/embed/4PzetPqepXA" height="200" width="300" title="song1"></iframe>
             </div>
           </div>
-          
-
         </div>
          
       </React.Fragment>

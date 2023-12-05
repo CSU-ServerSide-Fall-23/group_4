@@ -1,3 +1,8 @@
+/**
+ * Christmas Website Project
+ * @author Gurpreet Singh & Michaela 
+ * @version 12-04-2023
+ */
 const Nav = () => {
     return(
     <nav class="navbar navbar-expand-lg darkgr ">
