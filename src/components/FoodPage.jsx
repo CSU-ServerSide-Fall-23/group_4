@@ -20,7 +20,7 @@ const FoodPage = () => {
 
   //the useEffect() below is for the countdown api
   useEffect(() => { 
-    axios.get("https://christmasjoy.dev/api/countdown")
+    axios.get("https://christmascountdown.live/api/timeleft/?timezone=EST")
       .then(response => {
         setTimeInDays(response.data)
         console.log(response.data)
@@ -34,7 +34,7 @@ return(
     <React.Fragment>
         <div class="container">
             <h1> Food Page</h1>
-            <p> {TimeinDays.days} Days Left Until Christmas</p>
+            <p> {TimeinDays.sleeps} Days Left Until Christmas</p>
 
             <div class="row">
                 <div class="col-6">

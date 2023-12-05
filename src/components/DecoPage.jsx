@@ -22,7 +22,7 @@ const DecoPage = () => {
 
   //the useEffect() below is for the countdown api
   useEffect(() => { 
-    axios.get("https://christmasjoy.dev/api/countdown")
+    axios.get("https://christmascountdown.live/api/timeleft/?timezone=EST")
       .then(response => {
         setTimeInDays(response.data)
         console.log(response.data)
@@ -36,7 +36,7 @@ return(
         <div class="container">
         
           <h1> Deco Page </h1>
-          <p> {TimeinDays.days} Days Left Until Christmas</p>
+          <p> {TimeinDays.sleeps} Days Left Until Christmas</p>
           <div class="row">
             <div class="col">
                 <a href="https://www.amazon.com/OurWarm-Christmas-Inflatables-Decorations-Inflatable/dp/B08GKF1KJH/ref=sr_1_4?crid=VW6T41EDTZXI&keywords=christmas+inflatable+outdoor+decoration&qid=1699150519&sprefix=christmas+infla%2Caps%2C282&sr=8-4"><img src={inflate} height="200" width ="200"></img></a>
